@@ -1,10 +1,4 @@
 import java.util.Scanner;
-
-/**
- *
- * @author HP
- */
-   
 class BankAccount
 {
     private double AccBalance;
