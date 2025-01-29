@@ -56,16 +56,22 @@ class ATM_Interface {
                 }
                 case 2:
                 {
-                    System.out.println("Enter the amount to deposit : ");
-                    amount = sc.nextDouble();
-                    if(amount>0)
+                    while(true)
                     {
-                        account.diposit(amount);
-                        System.out.println("Amount Diposited Successfully.\nYour Current Balance is : "+account.getAccBalance());
-                    }
-                    else
-                    {
-                        System.out.println("Invalid amount!!");
+                        System.out.println("Enter the amount to be deposit : ");
+                        amount = sc.nextDouble();
+                    
+                        if(amount>0)
+                        {
+                            account.diposit(amount);
+                            System.out.println("Amount Diposited Successfully.\nYour Current Balance is : "+account.getAccBalance());
+                            break;
+                        }
+                        else
+                        {   
+                            System.out.println("Invalid amount!!");
+                            continue;
+                        }
                     }
                     break;
                 }
