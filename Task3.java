@@ -61,7 +61,7 @@ class ATM_Interface {
                     if(amount>0)
                     {
                         account.diposit(amount);
-                        System.out.println("Amount Diposited Successfully.");
+                        System.out.println("Amount Diposited Successfully.\nYour Current Balance is : "+account.getAccBalance());
                     }
                     else
                     {
