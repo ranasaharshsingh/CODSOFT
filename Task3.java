@@ -77,12 +77,26 @@ class ATM_Interface {
                 }
                 case 3:
                 {
-                    System.out.println("Enter the amount to withdraw :");
-                    amount = sc.nextDouble();
-                    if(amount >= 0 && account.withdrawal(amount))
-                        System.out.println("Withdrawal Successful.");
-                    else
-                        System.out.println("Invalid amount entered or Insufficiant Bank Balance.");
+                    while(true)
+                    {
+                        System.out.println("Enter the amount to withdraw :");
+                        amount = sc.nextDouble();
+                        if(amount > 0 && account.withdrawal(amount))
+                        {
+                            System.out.println("Withdrawal Successful.\nYour Current Balance is : "+account.getAccBalance());
+                            break;
+                    }
+                        else if(amount <= 0)
+                        {
+                            System.out.println("Invalid amount entered .");
+                            continue;
+                        }
+                        else
+                        {
+                            System.out.println("Insufficient Bank Balance .");
+                            continue;
+                        }
+                    }
                     break;
                 }
                 case 4:
